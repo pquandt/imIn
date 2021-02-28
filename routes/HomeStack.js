@@ -8,14 +8,14 @@ const screens = {
 WelcomeScreen: {
     screen: WelcomeScreen,
     navigationOptions: {
-        header: null,
+        headerShown: false
 
     }
 },
 Anmeldung: {
     screen: Anmeldung,   
     navigationOptions: {
-        header: null,
+        title: null
      
     }
 }

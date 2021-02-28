@@ -28,6 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "first look",
+    "githubUrl": "https://github.com/pquandt/imIn"
   }
 }
