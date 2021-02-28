@@ -18,14 +18,18 @@ import {
 
 
 
-export default function WelcomeScreen() {
-  useFonts({
-    Montserrat_400Regular,
-    Montserrat_700Bold,
-  });
+export default function Anmeldung() {
 
+    const [fontsLoaded] = useFonts({
+        Montserrat_400Regular,
+        Montserrat_700Bold,
+      });
+    
+      if (!fontsLoaded) {
+        return null
+      }
   
-    const [value, onChangeText] = React.useState('Nutzername');
+ 
 
   return (
     <SafeAreaView style={styles.container}>
@@ -63,11 +67,7 @@ export default function WelcomeScreen() {
         </TouchableOpacity>
       </View>
 
-      <TextInput
-      style={{ height: 20, borderColor: 'gray', borderWidth: 1, fontFamily:"Montserrat_400Regular", flex: 4 }}
-      onChangeText={text => onChangeText(text)}
-      value={value}
-    />
+ 
 
       <View style={{ alignItems: "flex-end", flex:5}}>
         <Text style={{ color: "#f3008a", fontFamily: "Montserrat_400Regular" }}>

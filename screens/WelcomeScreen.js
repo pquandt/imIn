@@ -17,11 +17,14 @@ import {
 
 export default function WelcomeScreen() {
   
-useFonts({
+const [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_700Bold,
   });
 
+  if (!fontsLoaded) {
+    return null
+  }
 
   return (
     <SafeAreaView style={styles.container}>
