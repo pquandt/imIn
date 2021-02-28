@@ -1,15 +1,15 @@
-// import { StatusBar } from 'expo-status-bar';
+// import 'react-native-gesture-handler';
 import React from 'react';
-
-// import WelcomeScreen from "./screens/WelcomeScreen"
-import Anmeldung from "./screens/Anmeldung"
 import { StyleSheet, Text, View } from 'react-native';
+import Navigator from "./routes/HomeStack"
 
 
 export default function App() {
   return (
-    // <WelcomeScreen />
-    <Anmeldung />
+
+ 
+    <Navigator />
+
   );
 }
 

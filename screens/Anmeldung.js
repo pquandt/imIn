@@ -54,6 +54,15 @@ export default function Anmeldung() {
         </Text>
       </View>
 
+       
+
+      <View style={{ alignItems: "flex-end", flex:5}}>
+        <Text style={{ color: "#f3008a", fontFamily: "Montserrat_400Regular" }}>
+          Passwort vergessen?{" "}
+        </Text>
+      </View>
+
+
       <View
         style={{
           justifyContent: "center",
@@ -67,13 +76,7 @@ export default function Anmeldung() {
         </TouchableOpacity>
       </View>
 
- 
-
-      <View style={{ alignItems: "flex-end", flex:5}}>
-        <Text style={{ color: "#f3008a", fontFamily: "Montserrat_400Regular" }}>
-          Passwort vergessen?{" "}
-        </Text>
-      </View>
+      
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     paddingTop: 54,
-    marginHorizontal: 30,
+    paddingHorizontal: 30,
     fontFamily: "Montserrat_400Regular",
   },
 
