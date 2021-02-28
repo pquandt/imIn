@@ -25,10 +25,9 @@ export default function WelcomeScreen({ navigation }) {
     return null;
   }
 
-
   const pressHandler = () => {
-navigation.navigate("Anmeldung")
-  }
+    navigation.navigate("Anmeldung");
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     paddingTop: 54,
-   paddingHorizontal: 30,
+    paddingHorizontal: 30,
     fontFamily: "Montserrat_400Regular",
   },
 

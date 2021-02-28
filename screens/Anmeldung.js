@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { TextInput } from 'react-native';
+import { TextInput } from "react-native";
 import { useFonts } from "expo-font";
 import {
   Montserrat_400Regular,
@@ -16,20 +16,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-
-
 export default function Anmeldung() {
+  const [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_700Bold,
+  });
 
-    const [fontsLoaded] = useFonts({
-        Montserrat_400Regular,
-        Montserrat_700Bold,
-      });
-    
-      if (!fontsLoaded) {
-        return null
-      }
-  
- 
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -54,14 +49,11 @@ export default function Anmeldung() {
         </Text>
       </View>
 
-       
-
-      <View style={{ alignItems: "flex-end", flex:5}}>
+      <View style={{ alignItems: "flex-end", flex: 5 }}>
         <Text style={{ color: "#f3008a", fontFamily: "Montserrat_400Regular" }}>
           Passwort vergessen?{" "}
         </Text>
       </View>
-
 
       <View
         style={{
@@ -76,7 +68,6 @@ export default function Anmeldung() {
         </TouchableOpacity>
       </View>
 
-      
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -131,7 +122,6 @@ const styles = StyleSheet.create({
     color: "#000",
   },
 
- 
   logoSize: {
     resizeMode: "contain",
     width: 250,
