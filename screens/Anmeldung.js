@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+import { TextInput } from 'react-native';
 import { useFonts } from "expo-font";
 import {
   Montserrat_400Regular,
@@ -15,49 +16,62 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+
+
 export default function WelcomeScreen() {
-  
-useFonts({
+  useFonts({
     Montserrat_400Regular,
     Montserrat_700Bold,
   });
 
+  
+    const [value, onChangeText] = React.useState('Nutzername');
 
   return (
     <SafeAreaView style={styles.container}>
-
-      <View style={{ justifyContent: "center", alignItems: "center", flex: 1, margin:55}}>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          flex: 1,
+          margin: 55,
+        }}
+      >
         <Image
           style={styles.logoSize}
           source={require("../assets/pics/drawable-xhdpi/logo.png")}
         />
       </View>
 
-      <View style={{flex: 2, justifyContent:"center"}}>
-        <Text style={styles.boldText}>Willkommen</Text>
-        <Text style={{fontFamily: "Montserrat_400Regular"}}>
-          verlasse deine Komfortzone {"\n"}und werde Teil der I'm in! Community!
+      <View style={{ flex: 2, justifyContent: "center" }}>
+        <Text style={styles.boldText}>Anmeldung</Text>
+        <Text style={{ fontFamily: "Montserrat_400Regular" }}>
+          Melde dich mit deiner E-Mail {"\n"}und deinem Passwort an.
         </Text>
       </View>
 
-      <View style={{ justifyContent: "center", alignItems: "center", flex:3, paddingBottom:"10%"}}>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          flex: 3,
+          paddingBottom: "10%",
+        }}
+      >
         <TouchableOpacity style={styles.buttonYellow}>
-          <View>
-            <Text style={styles.buttonText}>Mit Google registrieren</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.buttonWhite}>
-          <View>
-            <Text style={styles.buttonText}>Mit Email registrieren</Text>
-          </View>
+          <Text style={styles.buttonText}>Anmelden</Text>
         </TouchableOpacity>
       </View>
 
-      <View style={{ alignItems: "center", paddingBottom: 30}}>
-        <Text>Bist du schon angemeldet?</Text>
-        <Text style={{ color: "#f3008a", fontFamily: "Montserrat_700Bold" }}>
-          Hier anmelden
+      <TextInput
+      style={{ height: 20, borderColor: 'gray', borderWidth: 1, fontFamily:"Montserrat_400Regular", flex: 4 }}
+      onChangeText={text => onChangeText(text)}
+      value={value}
+    />
+
+      <View style={{ alignItems: "flex-end", flex:5}}>
+        <Text style={{ color: "#f3008a", fontFamily: "Montserrat_400Regular" }}>
+          Passwort vergessen?{" "}
         </Text>
       </View>
       <StatusBar style="auto" />
@@ -67,7 +81,7 @@ useFonts({
 
 const styles = StyleSheet.create({
   container: {
-flex: 1,
+    flex: 1,
     backgroundColor: "#fff",
     paddingTop: 54,
     marginHorizontal: 30,
@@ -75,16 +89,15 @@ flex: 1,
   },
 
   boldText: {
-  
     fontFamily: "Montserrat_700Bold",
     fontSize: 28,
-    marginBottom: 20
+    marginBottom: 20,
   },
 
   buttonYellow: {
     width: "100%",
     height: 50,
-    margin:10,
+    margin: 10,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -115,6 +128,7 @@ flex: 1,
     color: "#000",
   },
 
+ 
   logoSize: {
     resizeMode: "contain",
     width: 250,
